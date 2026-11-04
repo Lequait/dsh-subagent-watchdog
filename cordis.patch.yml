@@ -1,0 +1,3 @@
+- insert:
+    - id: subagent-watchdog
+      name: dsh-subagent-watchdog

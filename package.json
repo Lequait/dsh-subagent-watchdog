@@ -1,0 +1,42 @@
+{
+  "name": "dsh-subagent-watchdog",
+  "version": "0.1.0",
+  "description": "子代理被上游断线打死时，替它给父代理报丧：监听 agent/error，确认子代理没有恢复后，向父代理投递一条可处理的中断通知。 Notify the parent agent when a subagent dies from an upstream failure instead of finishing.",
+  "type": "module",
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./lib/*": "./lib/*"
+  },
+  "files": [
+    "index.js",
+    "lib/",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=20",
+    "dsh": ">=0.2.0-rc.1"
+  },
+  "scripts": {
+    "test": "node --test tests/*.test.mjs"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "subagent",
+    "watchdog",
+    "agent-teams"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "schemastery": "^3.18.0"
+  }
+}
