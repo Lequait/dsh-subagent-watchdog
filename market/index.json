@@ -1,0 +1,87 @@
+{
+  "format": 1,
+  "title": {
+    "en": "Subagent Watchdog",
+    "zh": "子代理看门狗"
+  },
+  "description": {
+    "en": "Tells the parent agent when a subagent died from an upstream failure instead of finishing.",
+    "zh": "子代理被上游断线打死时，替它给父代理报丧。"
+  },
+  "metadata": {
+    "categories": {
+      "orchestration": {
+        "title": {
+          "en": "Orchestration",
+          "zh": "编排"
+        }
+      }
+    },
+    "labels": {
+      "subagent": {
+        "title": {
+          "en": "Subagent",
+          "zh": "子代理"
+        }
+      },
+      "reliability": {
+        "title": {
+          "en": "Reliability",
+          "zh": "可靠性"
+        }
+      },
+      "notification": {
+        "title": {
+          "en": "Notification",
+          "zh": "通知"
+        }
+      }
+    },
+    "sortKeys": {}
+  },
+  "plugins": [
+    {
+      "name": "dsh-subagent-watchdog",
+      "title": {
+        "en": "Subagent Watchdog",
+        "zh": "子代理看门狗"
+      },
+      "description": {
+        "en": "Listens to agent/error on every agent. If the child is still not running after a short settle delay, it delivers a followup turn to the parent with the child id, the failure, and the options the parent has. Cooldown and per-child caps keep a flapping provider from flooding the parent.",
+        "zh": "监听每个 agent 的 agent/error。短暂静置后若子代理仍未恢复运行，就向父代理投递一条后续轮：带上子代理 id、失败原因，以及父代理可选的处置方式。冷却时间与每子代理上限避免上游抖动时刷屏。"
+      },
+      "icon": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCIgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByb2xlPSJpbWciIGFyaWEtbGFiZWw9IlN1YmFnZW50IFdhdGNoZG9nIj4KICA8ZyBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIzLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+CiAgICA8Y2lyY2xlIGN4PSIzMiIgY3k9IjMyIiByPSIyMSIgLz4KICAgIDxjaXJjbGUgY3g9IjMyIiBjeT0iMzIiIHI9IjExIiAvPgogICAgPHBhdGggZD0iTTMyIDExdjZNMzIgNDd2Nk0xMSAzMmg2TTQ3IDMyaDYiIC8+CiAgICA8cGF0aCBkPSJNMzIgMzIgNDUgMTkiIC8+CiAgPC9nPgogIDxjaXJjbGUgY3g9IjMyIiBjeT0iMzIiIHI9IjMiIGZpbGw9ImN1cnJlbnRDb2xvciIgLz4KICA8Y2lyY2xlIGN4PSI0NSIgY3k9IjE5IiByPSIzLjQiIGZpbGw9ImN1cnJlbnRDb2xvciIgLz4KPC9zdmc+Cg==",
+      "author": "Lequait",
+      "metadata": {
+        "category": "orchestration",
+        "keywords": [
+          "subagent",
+          "watchdog",
+          "agent-teams",
+          "failure",
+          "notification"
+        ],
+        "labels": [
+          "subagent",
+          "reliability",
+          "notification"
+        ],
+        "sortKeys": {}
+      },
+      "versions": [
+        {
+          "version": "0.1.0",
+          "publishTimestamp": 1793822232,
+          "source": {
+            "type": "git",
+            "url": "https://github.com/Lequait/dsh-subagent-watchdog",
+            "commit": "d05577f35bfa865da47357c3763363c2fdc40c5d"
+          },
+          "engines": {
+            "dsh": ">=0.2.0-rc.1"
+          }
+        }
+      ]
+    }
+  ]
+}
