@@ -44,10 +44,24 @@ loader 会把绝对路径转成 `file://` URL，不需要 profile `node_modules`
 
 依赖 `schemastery` 需要在插件目录里 `npm install` 一次。
 
-### 方式二：作为包安装
+### 方式二：从仓库安装
 
 ```bash
-dsh plugin --profile <name> add dsh-subagent-watchdog
+dsh plugin --profile <name> add git+https://github.com/Lequait/dsh-subagent-watchdog.git
+```
+
+### 方式三：从插件市场安装
+
+把下面这个索引地址加进 Discover 的索引源，然后在市场里装：
+
+```
+https://github.com/Lequait/dsh-subagent-watchdog/raw/main/market/index.json
+```
+
+jsDelivr 镜像（国内更快）：
+
+```
+https://cdn.jsdelivr.net/gh/Lequait/dsh-subagent-watchdog@main/market/index.json
 ```
 
 ## 配置
